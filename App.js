@@ -1,59 +1,24 @@
-import React, { Component, useState } from "react";
-import {
-  StyleSheet
-} from "react-native";
-import {Container,Header,Content,Footer,Text,Button, View} from 'native-base';
+import React from "react";
+import ReactDOM from "react-dom";
+import { NativeRouter, Route, Switch } from "react-router-native";
+import AnimatedStack from 'react-router-native-animate-stack'
+import { Home } from "./components/Home";
+import { About } from "./components/About";
+import { SafeAreaView } from "react-native";
 
-export default class App extends Component {
-  constructor() {
-    super()
-  }
-  render() {
-    return (
-     <Container>
-       <Header style={styles.header}>
-         <Text>
-            test
-         </Text>
-       </Header>
-       <Content>
-         <Text>
-            deme
-         </Text>
-         <Text>
-          dinero
-         </Text>
-         <Button></Button>
-       </Content>
-       <Footer>
-         
-       </Footer>
-     </Container>
-    );
-  }
-}
-let styles = StyleSheet.create({
-  container: {
-    backgroundColor:"white"
-  },
-  content:{
-    flex:1,
-    flexDirection:"column",
-    backgroundColor:"skyblue",
-    alignItems:"center",
-    justifyContent:"center"
-  },
-  contentText:{
-    color:"white"
-  },
-  header:{
-    backgroundColor:"powderblue",
-    paddingTop:15
-  },
-  footer:{
-    flexDirection:"row",
-    backgroundColor:"steelblue",
-    alignItems:"center"
+const App = () => {
+  return (
+    
+    <NativeRouter>
+      <Switch>
+      <AnimatedStack>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        </AnimatedStack>
+      </Switch>
+    </NativeRouter>
+    
+  );
+};
 
-  }
-});
+export default App;
