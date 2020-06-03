@@ -1,0 +1,4 @@
+telias@simtlix.com
+hacer las actividades del video
+https://github.com/tomielias/Curso-React-Native/tree/Navegacion
+

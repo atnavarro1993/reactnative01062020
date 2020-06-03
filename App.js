@@ -1,119 +1,59 @@
 import React, { Component, useState } from "react";
 import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  TextInput,
-  SafeAreaView,
-  TouchableOpacity,
+  StyleSheet
 } from "react-native";
+import {Container,Header,Content,Footer,Text,Button, View} from 'native-base';
 
 export default class App extends Component {
   constructor() {
-    super();
-    this.state = {
-      value: "",
-      count: 0,
-    };
+    super()
   }
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.welcome}>
-          {this.state.value ? (
-            <Text>{this.state.value}</Text>
-          ) : (
-            <Text>Welcome to React native</Text>
-          )}
-        </View>
-        <View>
-          <Image
-            source={require("./assets/react.png")}
-            style={
-              (styles.image,
-              { transform: [{ rotate: `${this.state.count}deg` }] })
-            }
-          />
-        </View>
-        <View>
-          <Text>degrees rotated: {this.state.count}°</Text>
-        </View>
-        <View >
-          <TextInput
-            style={styles.textInput}
-            onChangeText={(text) => this.setState({ value: text })}
-            value={this.state.value}
-          />
-        </View>
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => this.setState({ count: this.state.count - 5 })}
-          >
-            <Text>rotate left</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => this.setState({ count: this.state.count + 5 })}
-          >
-            <Text>rotate right</Text>
-          </TouchableOpacity>
-        </View>
-        <ScrollView>
-          
-        </ScrollView>
-      </SafeAreaView>
+     <Container>
+       <Header style={styles.header}>
+         <Text>
+            test
+         </Text>
+       </Header>
+       <Content>
+         <Text>
+            deme
+         </Text>
+         <Text>
+          dinero
+         </Text>
+         <Button></Button>
+       </Content>
+       <Footer>
+         
+       </Footer>
+     </Container>
     );
   }
 }
 let styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#FFFFFF",
+    backgroundColor:"white"
   },
-  image: {
-    width: "100%",
-    alignContent: "center",
-    alignItems: "center",
+  content:{
+    flex:1,
+    flexDirection:"column",
+    backgroundColor:"skyblue",
+    alignItems:"center",
+    justifyContent:"center"
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    marginTop: 50,
+  contentText:{
+    color:"white"
   },
-  textInput: {
-    marginLeft: 10,
-    marginRight: 10,
-    height: 40,
-    width: 200,
-    borderWidth: 2,
-    borderColor:"blue",
-    paddingLeft: 5,
-    paddingRight: 5,
+  header:{
+    backgroundColor:"powderblue",
+    paddingTop:15
   },
-  countContainer: {
-    alignItems: "center",
-    padding: 10,
-  },
-  countText: {
-    color: "#333333",
-    fontSize: 30,
-  },
-  buttonsContainer: {
-    flexDirection: "row",
-    marginTop: 20,
-    alignContent: "center",
-    alignItems: "center",
-  },
-  button: {
-    backgroundColor: "#DDDDDD",
-    alignItems: "center",
-    marginLeft: 10,
-    marginRight: 10,
-    padding: 10,
-    borderRadius: 20,
-  },
+  footer:{
+    flexDirection:"row",
+    backgroundColor:"steelblue",
+    alignItems:"center"
+
+  }
 });
